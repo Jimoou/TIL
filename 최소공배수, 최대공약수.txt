@@ -1,0 +1,10 @@
+유클리드 호제법
+GCD(A, B) = GCD(B, A%B)
+
+while B != 0:
+    r = A%B
+    A = B
+    B = r
+
+최대공약수 : return A
+최소공배수 : A*B / GCD
