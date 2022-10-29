@@ -1,0 +1,31 @@
+생성
+
+di = {'a': 0, 'b': 1, 'c': 2, 'd': 3} # 직접 생성
+di = dict(zip('abcd',range(4))) # zip 함수를 사용해 dict 생성: zip(key list, value list)
+
+최대 value에 대한 key 찾기
+
+max(di,key=di.get) # di.get 이용
+[k for k,v in di.items() if max(di.values()) == v] # 리스트 컴프리헨션 이용
+
+#딕셔너리 value 출력하기 1:[]
+di['a]
+   //0
+di.get('a)
+   //0
+di.values()
+   //dict_values([0, 1, 2, 3])
+di.keys()
+   //dict_keys(['a','b','c','d'])
+
+추가
+di['e'] = 4
+
+{'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e' : 4}
+
+삭제
+del di['b']
+{'a': 0, 'c': 2, 'd': 3, 'e' : 4}
+
+
+
