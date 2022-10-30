@@ -1,0 +1,21 @@
+하나의 리스트에서 모든 조합을 구하기
+items = ['1', '2', '3', '4', '5']
+from itertools import permutations
+list(permutations(items, 2))
+
+두개의 리스트에서 모든 조합을 구하기
+from itertools import product
+items = [['a', 'b', 'c,'], ['1', '2', '3', '4'], ['!', '@', '#']]
+list(product(*items))
+
+def solution(nums):
+    from itertools import combinations as cb
+    answer = 0
+    for a in cb(nums, 3):
+        cand = sum(a)
+        for j in range(2, cand):
+            if cand%j==0:
+                break
+        else:
+            answer += 1
+    return answer
