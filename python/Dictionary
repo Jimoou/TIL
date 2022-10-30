@@ -1,5 +1,5 @@
 생성
-
+di = {}
 di = {'a': 0, 'b': 1, 'c': 2, 'd': 3} # 직접 생성
 di = dict(zip('abcd',range(4))) # zip 함수를 사용해 dict 생성: zip(key list, value list)
 
