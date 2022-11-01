@@ -1,0 +1,8 @@
+stack.pop()
+list.pop()동일함
+
+stack.peek() == list[-1]
+파이썬 리스트는 -1,-2,-3.... 등 위에서 부터 차례로 호출할 수 있음
+
+stack.push() list.append()
+동일함
