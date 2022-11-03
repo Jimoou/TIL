@@ -1,0 +1,11 @@
+from itertools import permutations
+list(permutations(items, 2))
+
+from itertools import combinations
+list(combinations(items, 2))
+
+두개이상의 리스트에서
+from itertools import product
+
+items = [['a', 'b', 'c,'], ['1', '2', '3', '4'], ['!', '@', '#']]
+list(product(*items))
