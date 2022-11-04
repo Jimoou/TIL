@@ -1,0 +1,6 @@
+1. slice로 문자열 순서 뒤집기
+string[::-1]
+
+2. reversed()로 문자열 순서 뒤집기
+reversed_str = "".join(reversed(string))
+
