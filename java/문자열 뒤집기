@@ -1,0 +1,3 @@
+StringBuffer sb = new StringBuffer(str);
+String reversedStr = sb.reverse().toString();
+System.out.println(reversedStr); // edcba
