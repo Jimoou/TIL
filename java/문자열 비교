@@ -1,0 +1,5 @@
+equalsIgnoreCase : 대소문자 구분안함.
+
+equals : 대소문자 구분함.
+
+equalsIgnoreCase( 문자열 )
