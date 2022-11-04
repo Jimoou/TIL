@@ -1,0 +1,25 @@
+방법 1. String.join()
+String.join()은 합친 문자열을 반환합니다. join()의 첫 번째 인자로 배열의 원소간 연결할 구분 문자, 두 번째 인자로 배열을 넣습니다.
+
+String[] company = { "Apple", "Amazon", "Google", "Microsoft"};
+String joinString = String.join(", ", company);
+ 
+System.out.println(joinString);
+Apple, Amazon, Google, Microsoft
+
+join()의 첫 번째 인자인 구분문자를 생략할 수 있습니다. 생략하면 공백으로 배열의 원소를 연결합니다.
+
+String joinString = String.join(" ","Apple", "Amazon", "Google", "Microsoft");
+ 
+System.out.println(joinString);
+Apple Amazon Google Microsoft
+
+List 컬랙션이더라도 String.join을 같은 방법으로 사용할 수 있습니다.
+
+List<String> company = List.of("Apple", "Amazon", "Google", "Microsoft");
+String joinString = String.join("-", company);
+ 
+System.out.println(joinString);
+Apple-Amazon-Google-Microsoft
+
+int들어있으면 안됨.
