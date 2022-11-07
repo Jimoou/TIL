@@ -1,0 +1,10 @@
+in, not in 
+
+str_text = 'abcdf'
+
+if 'a' in str_text:
+	#True 반환
+	print('포함')
+else:
+	#False 반환
+	print('미포함')
