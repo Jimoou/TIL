@@ -1,0 +1,10 @@
+num_list = list(map(int, input().split()))
+
+a, b, c = map(int, input().split())
+
+
+문자열
+a, b = input().split()
+
+공백을 기준으로 자름 문자열 리스트
+str = input().split())
