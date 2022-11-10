@@ -1,0 +1,3 @@
+Collections.max(list);
+
+Collections.min(list);
