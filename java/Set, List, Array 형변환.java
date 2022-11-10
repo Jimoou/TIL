@@ -33,7 +33,7 @@ set.toArray(array); // Array: [1, 2, 3]
 //[Array를 List로 변환]
 //Stream을 이용하면 Array를 List로 변환할 수 있습니다.
 Integer[] array = {1, 2, 3};
-List<Integer> list = Arrays.stream(array).collect(Collectors.toList());
+List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
 
 //[List를 Array로 변환]
 //List.toArray()를 이용하면 List를 Array로 쉽게 변환할 수 있습니다.
