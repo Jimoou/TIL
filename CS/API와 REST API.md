@@ -14,7 +14,7 @@ API를 사용하면 내부 구현 로직을 알지 못해도 정의되어 있는
 REST는 서버와 클라이언트의 통신 방식 중 하나임
 HTTP URI(Uniform Resource Identifier)를 통해 자원을 명시하고 HTTP Method를 통해 자원을 교환하는 것
 
-*HTTP Method : Create, Read, Update, Delete
+*HTTP Method : Create(Post), Read(Get), Update(Put), Delete(Delete)
 
 ### REST 특징(규칙)
 #### Server-Client 구조
