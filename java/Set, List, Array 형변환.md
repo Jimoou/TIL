@@ -1,3 +1,4 @@
+```java
 //[List를 Set으로]
 //(1)
 //Set를 생성할 때 인자로 List를 전달하면 됩니다.
@@ -40,3 +41,4 @@ List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
 List<Integer> list = Arrays.asList(1, 2, 3);
 Integer[] array = new Integer[list.size()];
 list.toArray(array);
+```

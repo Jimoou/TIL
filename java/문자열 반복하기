@@ -1,4 +1,0 @@
-String str = "abc";
-String repeated = str.repeat(3);
-
-repeated.equals("abcabcabc");
