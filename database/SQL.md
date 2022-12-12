@@ -155,3 +155,55 @@ create table Player (
     CHECK (start_date < end_date)
 );
 ```
+
+## FOREIGN KEY
+- attribute(s)가 다른 table의 primary key나 unique key를 참조할 때 사용
+
+### FOREIGN KEY를 선언하는 방법
+```mysql
+create table Employee (
+    ...
+    dept_id     INT.
+    FOREIGN KEY(dept_id)
+        references DEPARTMENT(id)
+        on delete reference_option
+        on update reference_option
+);
+```
+
+|reference_option|설명|
+|:-:|:-:|
+|CASCADE|참조값의 삭제/변경을 그대로 반영|
+|SET NULL|참조값이 삭제/변경 시 NULL로 변경|
+|RESTRICT|참조값이 삭제/변경되는 것을 금지|
+|NO ACTION|RESTRICT와 유사|
+|SET DEFAULT|참조값이 삭제/변경 시 default 값으로 변경|
+
+## ALTER TABLE
+- table의 schema를 변경하고 싶을 때 사용
+- 이미 서비스 중인 table의 schema를 변경하는 것이라면 변경 작업 때문에 서비스의 백엔드에 영향이 없을지 검토한 후에 변경하는 것이 중요
+
+### ALTER TABLE 사용 방법
+|유형|MySQL 예제|
+|:-:|:-:|
+|attribute 추가|<b>ALTER TABLE</b> employee <b>ADD</b> blood VARCHAR(2);|
+|attribute 이름 변경|<b>ALTER TABLE</b> employee <b>RENAME COLUMN</b> phone <b>TO</b> phone_num;|
+|attribute 타입 변경|<b>ALTER TABLE</b> employee <b>MODIFY COLUMN</b> blood <b>TO</b> CHAR(2);|
+|table 이름 변경|<b>ALTER TABLE</b> logs <b>RENAME TO</b> backend_logs;|
+|primary key 추가|<b>ALTER TABLE</b> log <b>ADD PRIMARY KEY</b> (id);|
+|...|...|
+
+## DROP TABLE
+- table을 삭제할 때 사용
+
+### DROP TABLE 사용 방법
+- DROP TABLE table_name;
+
+## desc TABLE;
+- table을 조회할 때 사용
+
+### desc TABLE 사용 방법
+- desc table_name;
+
+## database 구조를 정의할 때 중요한 점
+- 만들려는 서비스의 스펙과 데이터 일관성, 편의성, 확장성 등등을 종합적으로 고려하여 DB 스키마를 적절하게 정의하는 것이 중요하다.
