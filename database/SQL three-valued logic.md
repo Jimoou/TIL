@@ -67,3 +67,5 @@ mysql> SELECT D.id, D.name
     ->            WHERE E.birth_date >= '2000-01-01'
     ->        ); 
 ```
+
+[출처 : Youtube - 쉬운코드] (https://youtu.be/y_7rOoOodCY)

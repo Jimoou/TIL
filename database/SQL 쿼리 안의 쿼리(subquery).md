@@ -175,3 +175,5 @@ mysql> SELECT DISTINCT E.id, E.name, E.postion
 
 ### 성능 비교 : IN vs EXISTS
 RDBMS의 종류와 버전에 따라 다르며 최근 버전은 많은 개선이 이루어져서 IN과 EXISTS의 성능 차이가 거의 없는 것으로 알고 있습니다.
+
+[출처 : Youtube - 쉬운코드] (https://youtu.be/lwmwlA2WhFc)

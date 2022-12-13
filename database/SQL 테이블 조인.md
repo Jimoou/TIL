@@ -148,3 +148,5 @@ mysql> SELECT E.name AS empl_name,
     ->                 LEFT JOIN department D ON E.dept_id = D.id
     -> WHERE W.proj_id = 2001;
 ```
+
+[출처 : Youtube - 쉬운코드] (https://youtu.be/E-khvKjjVv4)
