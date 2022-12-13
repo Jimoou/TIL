@@ -4,7 +4,7 @@
 ### ex)
 #### ID가 14인 임직원보다 생일이 빠른 임직원의 ID, 이름, 생일을 알고 싶다.
 
-```javascript
+```java
 //1단계 ID가 14인 임직원의 생일을 조회
 mysql> SELECT birth_date FROM employee WHERE id = 14;
 
@@ -15,7 +15,7 @@ mysql> SELECT id, name, birth_date FROM employee
 
 - 위 두개의 쿼리를 합쳐서 실행할 수 있다.
 
-```javascript
+```java
 mysql> SELECT id, name, birth_date FROM employee
     -> WHERE birth_date < (
     ->              SELECT birth_date FROM employee WHERE id = 14
@@ -32,7 +32,7 @@ subquery는 ()안에 기술된다.
 
 #### ID가 1인 임직원과 같은 부서 같은 성별인 임직원들의 ID와 이름과 직군을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT id, name, position
     -> FROM employee
     -> WHERE (dept_id, sex) = (
@@ -44,7 +44,7 @@ mysql> SELECT id, name, position
 
 #### ID가 5인 임직원과 같은 프로젝트에 참여한 임직원들의 ID를 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT DISTINCT empl_id FROM works_on
     -> WHERE empl_id != 5 AND (proj_id = 2001 OR proj_id = 2002);
 
@@ -59,7 +59,7 @@ mysql> SELECT DISTINCT empl_id FROM works_on
 
 #### ID가 5인 임직원과 같은 프로젝트에 참여한 임직원들의 <u>ID</u>와 <u>이름</u>을 알고 싶다.
 
-```javascript
+```java
 //1
 mysql> SELECT id, name
     -> FROM employee
@@ -90,7 +90,7 @@ mysql> SELECT id, name
 
 #### ID가 7 혹은 12인 임직원이 참여한 프로젝트의 ID와 이름을 알고 싶다.
 
-```python
+```java
 mysql> SELECT P.id, P.name
     -> FROM project P
     -> WHERE EXISTS (
@@ -146,7 +146,7 @@ mysql> SELECT E.id, E.name, E.salary
 
 #### 리더보다 높은 연봉을 받는 부서원을 가진 리더의 ID와 이름과 연봉과 해당 부서 최고 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT E.id, E.name, E.salary
     ->     (
     ->        SELECT max(salary)
@@ -163,7 +163,7 @@ mysql> SELECT E.id, E.name, E.salary
 
 #### ID가 13인 임직원과 한번도 같은 프로젝트에 참여하지 못한 임직원들의 ID, 이름, 직군을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT DISTINCT E.id, E.name, E.postion
     -> FROM employee E, works_on W
     -> WHERE E.id = W.empl_id AND W.proj_id <> ALL (

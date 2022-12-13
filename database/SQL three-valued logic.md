@@ -17,13 +17,13 @@
 
 ## SQL에서 NULL인 값 조회하기
 잘못된 예
-```javascript
+```java
 mysql> SELECT id FROM employee WHERE birth_date = NULL;
 //아무것도 불러오지 않음.
 ```
 
 옳은 예
-```javascript
+```java
 mysql> SELECT id FROM employee WHERE birth_date IS NULL;
 //제대로 불러옴.
 ```
@@ -48,7 +48,7 @@ mysql> SELECT id FROM employee WHERE birth_date IS NULL;
 
 - NULL이 들어 있다면, 출력이 안되므로 다음과 같이 작성해서 NULL인 경우를 걸러줘야 한다.
 
-```javascript
+```java
 //1
 mysql> SELECT D.id, D.name
     -> FROM department AS D

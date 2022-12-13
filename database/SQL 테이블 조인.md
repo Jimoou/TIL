@@ -11,7 +11,7 @@
 
 #### ex)
 <b>ID가 1인 임직원이 속한 부서 이름은?</b>
-```javascript
+```java
 mysql> SELECT D.name
     -> FROM employee AS E, department AS D
     -> WHERE E.id = 1 and E.dept_id = D.id;
@@ -25,7 +25,7 @@ mysql> SELECT D.name
 
 #### ex)
 <b>ID가 1인 임직원이 속한 부서 이름은?</b>
-```javascript
+```java
 mysql> SELECT D.name
     -> FROM employee AS E JOIN department AS D ON E.dept_id = D.id
     -> WHERE E.id = 1;
@@ -35,14 +35,14 @@ mysql> SELECT D.name
 ### <span style="color: green">inner join</span>
 - 두 table에서 join condition을 만족하는 tuple들로 result table을 만드는 join
 
-```javascript
+```java
 FROM table1 [INNER] JOIN table2 ON join_ condition
 ```
 
 - join condition에 사용 가능한 연산자 (operator) : =, <, >, != 등등 여러 비교 연산자가 가능하다.
 - join condition에서 null 값을 가지는 tuple은 result table에 포함되지 못한다.
 
-```javascript
+```java
 mysql> SELECT *
     -> FROM employee E JOIN department D ON E.dept_id = D.id;
 ```
@@ -50,7 +50,7 @@ mysql> SELECT *
 ### <span style="color: green">outer join</span>
 - 두 table에서 join condition을 만족하지 않는 tuple들도 result table에 포함하는 join
 
-```javascript
+```java
 //1
 FROM table1 LEFT [OUTER] JOIN table2 ON join_condition
 //table1에서 join_condition에 의해서 매칭되지 않는 tuple까지도 함께 결과로 return함.
@@ -95,7 +95,7 @@ FROM table1 FULL [OUTER] JOIN table2 USING (attribute(s))
 - 두 table에서 같은 이름을 가지는 모든 attribute pair에 대해서 equi join을 수행한다. 따라서, 의도한대로 join하려 한다면, 각 table의 attribute에 유의해야 한다.
 - join condition을 따로 명시하지 않는다.
 
-```javascript
+```java
 //1
 FROM table1 NATURAL [INNER] JOIN table2
 
@@ -113,7 +113,7 @@ FROM table1 NATRUAL FULL [OUTER] JOIN table2
 - 두 table의 tuple pair로 만들 수 있는 모든 조합(= Cartesian product)을 result table로 반환한다.
 - join condition이 없다
 
-```javascript
+```java
 //implicit cross join
 FROM table1, table2
 
@@ -132,7 +132,7 @@ FROM table1 CROSS JOIN table2
 ## <span style="color: green">JOIN 예제</span>
 1. ID가 1003인 부서에 속하는 임직원 중 리더를 제외한 부서원의 ID, 이름, 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT E.id, E.name, E.salary
     -> FROM employee E JOIN department D ON E.dept_id = D.id
     -> WHERE E.dept_id = 1003 and E.id != D.leader_id;
@@ -140,7 +140,7 @@ mysql> SELECT E.id, E.name, E.salary
 
 2. ID가 2001인 프로젝트에 참여한 임직원들의 이름과 직군과 소속 부서 이름을 알고 싶다
 
-```javascript
+```java
 mysql> SELECT E.name AS empl_name,
     ->        E.position AS empl_position,
     ->        E.name AS dept_name

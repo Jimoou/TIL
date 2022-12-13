@@ -73,14 +73,14 @@ RDBMS마다 제공하는 SQL의 스펙이 조금씩 다르다.
 
 ## Key constraints : PRIMARY KEY를 선언하는 방법
 ### attribute 하나로 구성될 때
-```mysql
+```java
 create table Player (
     id      INT     PRIMARY KEY
     ...
 );
 ```
 ### attribute 하나 이상으로 구성될 때
-```mysql
+```java
 create table Player (
     team_id     VARCHAR(12),
     back_number INT,
@@ -95,14 +95,14 @@ create table Player (
 
 ### UNIQUE를 선언하는 방법
 #### attribute 하나로 구성될 때
-```mysql
+```java
 create table Player (
     id      INT     UNIQUE
     ...
 );
 ```
 #### attribute 하나 이상으로 구성될 때
-```mysql
+```java
 create table Player (
     team_id     VARCHAR(12),
     back_number INT,
@@ -114,7 +114,7 @@ create table Player (
 ## NOT NULL constraint
 - attribute가 NOT NULL로 지정되면 해당 attribute는 NULL을 값으로 가질 수 없다.
 ### NOT NULL을 선언하는 방법
-```mysql
+```java
 create table Student (
     ...
     phone_number INT  NOT NULL   UNIQUE,
@@ -127,7 +127,7 @@ create table Student (
 - 새로운 tuple을 저장할 때 해당 attribute에 대한 값이 없다면 default 값으로 저장
 
 ### DEFAULT를 선언하는 방법
-```mysql
+```java
 create table Orders (
     ...
     menu    varchar(15)     DEFAULT '짜장면',
@@ -140,14 +140,14 @@ create table Orders (
 
 ### CHECK를 선언하는 방법
 #### attribute 하나로 구성될 때
-```mysql
+```java
 create table EMPLOYEE (
     ...
     age    INT    CHECK (age >= 20)
 );
 ```
 #### attribute 하나 이상으로 구성될 때
-```mysql
+```java
 create table Player (
     start_date    DATE,
     end_date      DATE,
@@ -160,7 +160,7 @@ create table Player (
 - attribute(s)가 다른 table의 primary key나 unique key를 참조할 때 사용
 
 ### FOREIGN KEY를 선언하는 방법
-```mysql
+```java
 create table Employee (
     ...
     dept_id     INT.

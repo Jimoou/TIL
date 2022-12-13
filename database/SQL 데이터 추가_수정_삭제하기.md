@@ -14,19 +14,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp; [WHERE condition(s) ];
 
 #### ex
-```javascript
+```java
 mysql> UPDATE employee, works-on
     -> SET salary = salary *2
     -> WHERE id = empl_id and proj_id = 2003;
 ```
 
-```javascript
+```java
 mysql> UPDATE employee, works-on
     -> SET salary = salary *2
     -> WHERE employee.id = works_on.empl_id and proj_id = 2003;
 ```
 
-```javascript
+```java
 mysql> UPDATE employee, works-on
     -> SET salary = salary *2
 ```
@@ -38,11 +38,11 @@ mysql> UPDATE employee, works-on
 
 #### ex
 
-```javascript
+```java
 mysql> DELETE FROM employee WHERE id = 8;
 ```
 
-```javascript
+```java
 mysql> DELETE FROM project;
 ```
 

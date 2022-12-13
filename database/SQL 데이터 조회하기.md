@@ -5,13 +5,13 @@
 ### ex)
 - ID가 9인 임직원의 이름과 직군을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT name, position FROM employee WHERE id = 9;
 ```
 
 - project 2002를 leading하고 있는 임직원의 ID와 이름과 직군을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT employee.id, employee.name, position
     -> FROM project, employee
     -> WHERE project.id = 2002 and project.leader_id = employee.id;
@@ -23,7 +23,7 @@ mysql> SELECT employee.id, employee.name, position
 
 ### ex)
 
-```javascript
+```java
 mysql> SELECT E.id, E.name, position
     -> FROM project AS P, employee AS E
     -> WHERE P.id = 2002 and P.leader_id = E.id;
@@ -36,7 +36,7 @@ mysql> SELECT E.id, E.name, position
 |13|JISUNG|PO|
 
 
-```javascript
+```java
 mysql> SELECT E.id AS leader_id, E.name AS leader_name, position
     -> FROM project AS P, employee AS E
     -> WHERE P.id = 2002 and P.leader_id = E.id;
@@ -50,7 +50,7 @@ mysql> SELECT E.id AS leader_id, E.name AS leader_name, position
 
 <b>AS는 생략이 가능하다.</b>
 
-```javascript
+```java
 mysql> SELECT E.id leader_id, E.name leader_name, position
     -> FROM project P, employee E
     -> WHERE P.id = 2002 and P.leader_id = E.id;
@@ -68,7 +68,7 @@ mysql> SELECT E.id leader_id, E.name leader_name, position
 ### ex)
 - 디자이너들이 참여하고 있는 프로젝트들의 ID와 이름을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT P.id, P.name
     -> FROM employee AS E, works_on AS W, project AS P
     -> WHERE E.position = 'DSGN' and
@@ -84,7 +84,7 @@ mysql> SELECT P.id, P.name
 |2003|홈페이지 UI 개선|
 
 - DISTINCT를 통해 tuple의 중복을 제거
-```javascript
+```java
 mysql> SELECT DISTINCT P.id, P.name
     -> FROM employee AS E, works_on AS W, project AS P
     -> WHERE E.position = 'DSGN' and
@@ -103,7 +103,7 @@ mysql> SELECT DISTINCT P.id, P.name
 ### ex)
 - 이름이 N으로 시작하거나 N으로 끝나는 임직원들의 이름을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT name
     -> FROM employee
     -> WHERE name LIKE 'N%' or name LIKE'%N';
@@ -119,7 +119,7 @@ mysql> SELECT name
 
 - 이름이 NG가 들어가는 임직원들의 이름을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT name
     -> FROM employee
     -> WHERE name LIKE '%NG%';
@@ -134,7 +134,7 @@ mysql> SELECT name
 
 - 이름이 J로 시작하는, 총 네 글자의 이름을 가지는 임직원들의 이름을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT name
     -> FROM employee
     -> WHERE name LIKE 'J___';
@@ -164,7 +164,7 @@ mysql> SELECT name
 ### ex)
 - ID가 9인 임직원의 모든 attributes를 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT * FROM employee WHERE id = 9;
 ```
 
@@ -179,7 +179,7 @@ mysql> SELECT * FROM employee WHERE id = 9;
 ### ex)
 - 모든 임직원의 이름과 생일을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT name, birth_date
     -> FROM employee;
 ```

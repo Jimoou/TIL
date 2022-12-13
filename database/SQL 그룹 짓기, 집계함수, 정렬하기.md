@@ -8,7 +8,7 @@
 ### <span style="color: green">ORDER BY 예제</span>
 1. 임직원들의 정보를 연봉 순서대로 정렬해서 알고 싶다.
 
-```javascript
+```java
 //default(DESC)
 mysql> SELECT * FROM employee ORDER BY salary;
 
@@ -18,7 +18,7 @@ mysql> SELECT * FROM employee ORDER BY salary DESC;
 
 2. 임직원들의 정보를 부서별로 묶어서 부서내 연봉 순서로 내림차순 하겠다.
 
-```javascript
+```java
 mysql> SELECT * FROM employee ORDER BY dept_id ASC, salary DESC;
 ```
 
@@ -32,14 +32,14 @@ mysql> SELECT * FROM employee ORDER BY dept_id ASC, salary DESC;
 ### <span style="color: green">aggregate function 예제</span>
 1. 임직원 수를 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT COUNT(*) FROM employee;
 //여기서 asterisk가 의미하는 것은 tuple의 수
 ```
 
 2. 프로젝트 2002에 참여한 임직원 수와 최대 연봉과 최소 연봉과 평균 연봉을 알고 싶다
 
-```javascript
+```java
 mysql> SELECT COUNT(*), MAX(salary), MIN(salary), AVG(salary)
     -> FROM works_on W JOIN employee E ON W.empl_id = E.id
     -> WHERE W.proj_id = 2002;
@@ -53,7 +53,7 @@ mysql> SELECT COUNT(*), MAX(salary), MIN(salary), AVG(salary)
 ### <span style="color: green">GROUP BY 예제</span>
 1. 각 프로젝트에 차여한 임직원 수와 최대 연봉과 최소 연봉과 평균 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT W.proj_id COUNT(*), MAX(salary), MIN(salary), AVG(salary)
     -> FROM works_on W JOIN employee E ON W.empl_id = E.id
     -> GROUP BY W.proj_id;
@@ -67,7 +67,7 @@ mysql> SELECT W.proj_id COUNT(*), MAX(salary), MIN(salary), AVG(salary)
 ### <span style="color: green">HAVING 예제</span>
 1. 프로젝트 참여 인원이 7명 이상인 프로젝트들에 대해서 각 프로젝트에 참여한 임직원 수와 최대 연봉과 최소 연봉과 평균 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT W.proj_id COUNT(*), MAX(salary), MIN(salary), AVG(salary)
     -> FROM works_on W JOIN employee E ON W.empl_id = E.id
     -> GROUP BY W.proj_id;
@@ -76,7 +76,7 @@ mysql> SELECT W.proj_id COUNT(*), MAX(salary), MIN(salary), AVG(salary)
 
 2. 각 부서별 인원수를 인원 수가 많은 순서대로 정렬해서 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT dept_id, COUNT(*) AS empl_count FROM employee
     -> GROUP BY dept_id
     -> ORDER BY empl_count DESC;
@@ -84,7 +84,7 @@ mysql> SELECT dept_id, COUNT(*) AS empl_count FROM employee
 
 3. 각 부서별-성별 인원수를 인원 수가 많은 순서대로 정렬해서 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT dept_id, COUNT(*) AS empl_count FROM employee
     -> GROUP BY dept_id, sex
     -> ORDER BY empl_count DESC;
@@ -92,7 +92,7 @@ mysql> SELECT dept_id, COUNT(*) AS empl_count FROM employee
 
 4. 회사 전체 평균 연봉보다 평균 연봉이 적은 부서들의 평균 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT dept_id, AVG(salary)
     -> FROM employee
     -> GROUP BY dept_id
@@ -104,7 +104,7 @@ mysql> SELECT dept_id, AVG(salary)
 5. 각 프로젝트별로 프로젝트에 참여한 90년대생들의 수와 이들의 평균 연봉을 알고 싶다.
 
 
-```javascript
+```java
 mysql> SELECT proj_id, COUNT(*), ROUND(AVG(salary), 0)
     -> FROM works_on W JOIN employee E ON W.empl_id = E.id
     -> WHERE E.birth_date BETWEEN '1990-01-01' AND '1999-12-31'
@@ -113,7 +113,7 @@ mysql> SELECT proj_id, COUNT(*), ROUND(AVG(salary), 0)
 
 6. 프로젝트 참여 인원이 7명 이상인 프로젝트에 한정해서 각 프로젝트별로 프로젝트에 참여한 90년대생들의 수와 이들의 평균 연봉을 알고 싶다.
 
-```javascript
+```java
 mysql> SELECT proj_id, COUNT(*), ROUND(AVG(salary), 0)
     -> FROM works_on W JOIN employee E ON W.empl_id = E.id
     -> WHERE E.birth_date BETWEEN '1990-01-01' AND '1999-12-31'
@@ -124,7 +124,7 @@ mysql> SELECT proj_id, COUNT(*), ROUND(AVG(salary), 0)
 
 ## <span style="color: green">SELECT로 조회하기 요약</span>
 
-```javascript
+```java
 //1
 FROM table(s)
 
